@@ -1,0 +1,237 @@
+:root{
+    /* primary-clr */
+   --primary-clr: hsl(215, 51%, 70%);
+   --primary-clr2:hsl(178, 100%, 50%);
+
+   /* natural-clr */
+    --main-BG-clr: hsl(217, 54%, 11%);
+    --card-bg-clr: hsl(216, 50%, 16%);
+    --line-clr: hsl(215, 32%, 27%);
+    --white :hsl(0, 0%, 100%);
+
+    /* font-family */
+    --ffamily: "Outfit", sans-serif;
+
+    /* font-weight */
+    --fweight:300;
+    --fweight2:400;
+    --fweight3:600;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* genral-styling */
+body{
+    font-family: var(--ffamily);
+    background-color: var(--main-BG-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: auto;
+    inset: 0; 
+}
+
+.nft__preview-card{
+    width: 220px;
+    background-color: var(--card-bg-clr);
+    display: flex;
+    flex-direction: column;
+   gap: 0.6rem;
+   padding: 1rem;
+   margin: 1rem;
+   border-radius: 0.5rem;
+}
+
+
+/* image/icon styling */
+.nft__img img{
+    border-radius: 0.4rem;
+}
+
+.nft__img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.nft__img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 191, 191, 0.622);
+    border-radius: 0.4rem;
+}
+
+.view_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.nft__img:hover .view_icon {
+    opacity: 3;
+}
+
+.card__title {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: var(--fweight3);
+}
+
+.card__title:hover{
+    color: var(--primary-clr2);
+}
+
+.card__info{
+    color: var(--primary-clr);
+    font-size: 0.6rem;
+    font-weight: var(--fweight);
+}
+
+.flex-group{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.svg-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.svg-icon1{
+    height: 10px;
+    width: 9px;
+}
+
+.svg-ethereum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.5rem;
+    color: var(--primary-clr2);
+    font-weight: var(--fweight3);
+    letter-spacing: 0.02rem;
+}
+
+.svg-clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.6rem;
+    color:var(--primary-clr);
+    font-weight: var(--fweight2);
+}
+
+hr{
+    border: 0.1px solid var(--primary-clr);
+    height: 0.2px;
+}
+
+.person-about{
+    display: flex;
+   align-items: center;
+    gap: 0.5rem;
+}
+
+.jules-wyven-img img{
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--white);
+    border-radius: 50%;  
+}
+
+.person-name{
+    font-size: 0.6rem;
+}
+
+.person-name span:first-child{
+    color: var(--primary-clr);
+}
+
+.person-name span:last-child{
+    color: var(--white);
+    font-weight: var(--fweight2);
+}
+
+.person-name span:last-child:hover{
+    color: var(--primary-clr2);
+}
+
+
+/* media query */
+@media (min-width:500px){
+   .nft__preview-card{
+    width: 240px;
+   }
+}
